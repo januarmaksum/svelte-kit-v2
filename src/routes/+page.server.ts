@@ -4,13 +4,18 @@ import type { Post } from "$lib/types/posts.type";
 import type { Comment } from "$lib/types/comment.type";
 
 export const load: PageServerLoad = async ({ fetch }) => {
-    const api = createApiClient({
+    const postsApi = createApiClient({
         baseUrl: "https://jsonplaceholder.typicode.com",
         fetchFn: fetch,
     });
 
-    const posts = api.get<Post[]>("/posts");
-    const comments = api.get<Comment[]>("/commentss");
+    const commentsApi = createApiClient({
+        baseUrl: "https://tools-httpstatus.pickup-services.com",
+        fetchFn: fetch,
+    });
+
+    const posts = postsApi.get<Post[]>("/posts");
+    const comments = commentsApi.get<Comment[]>("/500");
 
     return {
         posts,

@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/state';
+	export let error;
+	export let status;
 </script>
 
-<h1>{page.error?.message}</h1>
+<div class="p-10 text-red-600">
+	<h1 class="font-bold text-2xl">{status}</h1>
+	<p>{error?.message}</p>
+</div>
