@@ -5,7 +5,7 @@
   export let posts: Post[];
 </script>
 
-<div class="p-6">
+<div class="p-6 max-h-[800px] overflow-auto">
 	<h2 class="text-2xl font-bold mb-4">Posts</h2>
 	<PostList {posts} />
 </div>
