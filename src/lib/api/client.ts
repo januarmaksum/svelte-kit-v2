@@ -9,7 +9,6 @@ export function createApiClient({ baseUrl, fetchFn, headers }: ApiClientConfig) 
         try {
             const res = await fetchFn(baseUrl + url, {
                 headers: {
-                    "Content-Type": "application/json",
                     ...(headers ?? {}),
                     ...(options.headers ?? {})
                 },
